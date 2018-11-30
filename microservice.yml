@@ -1,0 +1,38 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["python", "/app/app.py"]
+actions:
+  add:
+      http:
+        path: /add
+        method: post
+        port: 8000
+      arguments:
+        list_name:
+          type: string
+          required: false
+          in: requestBody
+        user_email:
+          type: string
+          required: false
+          in: requestBody
+        status:
+          type: string
+          required: false
+          in: requestBody
+        first_name:
+          type: string
+          required: false
+          in: requestBody
+      output:
+        type: object
+        contentType: application/json
+
+environment:
+  API_KEY:
+    type: string
+    help: Please acquire your mailchimp API from Account -> Extras -> API Keys
+  USERNAME:
+    type: string
+    help: Please provide your mailchimp USERNAME
