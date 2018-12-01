@@ -4,34 +4,45 @@ lifecycle:
     command: ["python", "/app/app.py"]
 actions:
   add:
-      http:
-        path: /add
-        method: post
-        port: 8000
-      arguments:
-        list_name:
-          type: string
-          required: true
-          in: requestBody
-        user_email:
-          type: string
-          required: true
-          in: requestBody
-        status:
-          type: string
-          required: true
-          in: requestBody
-        first_name:
-          type: string
-          required: true
-          in: requestBody
-        last_name:
-          type: string
-          required: true
-          in: requestBody
-      output:
-        type: any
-        contentType: application/json
+    http:
+      path: /add
+      method: post
+      port: 8000
+    arguments:
+      list_name:
+        type: string
+        required: true
+        in: requestBody
+      user_email:
+        type: string
+        required: true
+        in: requestBody
+      status:
+        type: string
+        required: true
+        in: requestBody
+      first_name:
+        type: string
+        required: true
+        in: requestBody
+      last_name:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: any
+      contentType: application/json
+  delete:
+    http:
+      path: /delete
+      method: post
+      port: 8000
+    arguments:
+      <<: *find_args
+    output:
+      type: any
+      contentType: application/json
+
 
 environment:
   API_KEY:
