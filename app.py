@@ -30,16 +30,16 @@ class Handler:
 
 		try:
 			self.client.lists.members.create(list_id, {
-            'email_address': user_email,
-            'status': status,
-            'merge_fields': {
-            'FNAME': first_name,
-            'LNAME': last_name,
-            }})
+			'email_address': user_email,
+			'status': status,
+			'merge_fields': {
+			'FNAME': first_name,
+			'LNAME': last_name,
+			}})
 		except Exception as e:
 			return str(e)
 
-		return "Successfully added {0} to {1} list!".format(first_name + " " + last_name, list_name)
+		return "Successfully added {0} to {1} list.".format(first_name + " " + last_name, list_name)
 		
 
 	#get list ID from list name
