@@ -11,22 +11,26 @@ actions:
       arguments:
         list_name:
           type: string
-          required: false
+          required: true
           in: requestBody
         user_email:
           type: string
-          required: false
+          required: true
           in: requestBody
         status:
           type: string
-          required: false
+          required: true
           in: requestBody
         first_name:
           type: string
-          required: false
+          required: true
+          in: requestBody
+        last_name:
+          type: string
+          required: true
           in: requestBody
       output:
-        type: object
+        type: any
         contentType: application/json
 
 environment:
