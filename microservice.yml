@@ -8,7 +8,7 @@ actions:
       path: /add
       method: post
       port: 8000
-    arguments:
+    arguments: &find_args
       list_name:
         type: string
         required: true
@@ -38,11 +38,38 @@ actions:
       method: post
       port: 8000
     arguments:
-      <<: *find_args
+      list_name:
+        type: string
+        required: true
+        in: requestBody
+      user_email:
+        type: string
+        required: true
+        in: requestBody
     output:
       type: any
       contentType: application/json
-
+  add_tag:
+    http:
+      path: /addtag
+      method: post
+      port: 8000
+    arguments:
+      list_name:
+        type: string
+        required: true
+        in: requestBody
+      user_email:
+        type: string
+        required: true
+        in: requestBody
+      tag:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: any
+      contentType: application/json
 
 environment:
   API_KEY:
