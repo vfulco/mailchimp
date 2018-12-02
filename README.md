@@ -11,8 +11,26 @@ omg build
 
 ## Usage
 
+### Add subscriber to a list
+
 ```
 
-omg exec <coming soon>
+omg exec add -a list_name=<list_name> -a user_email=<user_email> -a status="subscribed" -a first_name=<f_name> -a last_name=<L_name> -e API_KEY=<API_KEY> -e USERNAME= <username>
+
+```
+
+### Delete subscriber from a list
+
+```
+
+omg exec delete -a list_name=<list_name> -a user_email=<user_email> -e API_KEY=<API_KEY> -e USERNAME= <username>
+
+```
+
+### Add Tags to a subcriber
+
+```
+
+omg exec add_tag -a list_name=<list_name> -a user_email=<user_email> -a tag= <tag_name> -e API_KEY=<API_KEY> -e USERNAME= <username>
 
 ```
