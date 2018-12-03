@@ -34,3 +34,11 @@ omg exec delete -a list_name=<list_name> -a user_email=<user_email> -e API_KEY=<
 omg exec add_tag -a list_name=<list_name> -a user_email=<user_email> -a tag= <tag_name> -e API_KEY=<API_KEY> -e USERNAME= <username>
 
 ```
+
+### Update a subcriber
+
+```
+
+pmg exec update_subscriber -a list_name=<list_name< -a user_email= <user_email> -a last_name= <last_name> -a phone=<phone_number> -a new_email=<new_email> -e API_KEY= <API_KEY> -e USERNAME= <username>
+
+```
