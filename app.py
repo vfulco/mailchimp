@@ -13,9 +13,8 @@ from mailchimp3 import MailChimp
 class Handler:
 	app = Flask(__name__)
 
-	def __init__(self):
+	def __init__(self) -> None:
 		self.client = MailChimp(mc_api=os.getenv('API_KEY'), mc_user=os.getenv('USERNAME'))
-		return None
 
 	def add_to_list(self):
 		req = request.get_json()
