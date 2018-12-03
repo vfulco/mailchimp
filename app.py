@@ -4,8 +4,6 @@ import os
 import sys
 import requests
 
-
-
 from flask import Flask, make_response, request
 from mailchimp3 import MailChimp
 
