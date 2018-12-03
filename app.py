@@ -104,7 +104,7 @@ class Handler:
 		return self.end({'success': True})
 
 
-
+	# Helper Functions 
 	def get_list_id(self, list_name):
 		for x in self.client.lists.all(get_all=True, fields="lists.name,lists.id")['lists']:
 			if(x['name'] == list_name):
