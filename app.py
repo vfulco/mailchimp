@@ -66,7 +66,6 @@ class Handler:
 
 		return self.end({'success': True})
 
-
 	def update_subscriber(self):
 		req = request.get_json()
 		list_name = req['list_name']
@@ -121,6 +120,7 @@ class Handler:
 		resp.headers['Content-Type'] = 'application/json; charset=utf-8'
 		return resp
 
+
 if __name__ == '__main__':
 	if os.getenv('API_KEY') is None or os.getenv('USERNAME') is None:
 		print('API Key and Username not found')
@@ -134,5 +134,3 @@ if __name__ == '__main__':
 	 							methods=['post'])
 
 	handler.app.run(host='0.0.0.0', port=8000)
-
-
