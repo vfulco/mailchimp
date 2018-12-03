@@ -3,11 +3,12 @@ lifecycle:
   startup:
     command: ["python", "/app/app.py"]
 actions:
-  add:
+  add_subscriber:
     http:
       path: /add
       method: post
       port: 8000
+      contentType: application/json
     arguments: &find_args
       list_name:
         type: string
@@ -30,9 +31,9 @@ actions:
         required: true
         in: requestBody
     output:
-      type: any
+      type: object
       contentType: application/json
-  delete:
+  delete_subscriber:
     http:
       path: /delete
       method: post
@@ -47,7 +48,7 @@ actions:
         required: true
         in: requestBody
     output:
-      type: any
+      type: object
       contentType: application/json
   add_tag:
     http:
@@ -68,7 +69,48 @@ actions:
         required: true
         in: requestBody
     output:
-      type: any
+      type: object
+      contentType: application/json
+  update_subscriber:
+    http:
+      path: /updatesubscriber
+      method: post
+      port: 8000
+    arguments:
+      list_name:
+        type: string
+        required: true
+        in: requestBody
+      user_email:
+        type: string
+        required: true
+        in: requestBody
+      status:
+        type: string
+        required: false
+        in: requestBody
+      first_name:
+        type: string
+        required: false
+        in: requestBody
+      last_name:
+        type: string
+        required: false
+        in: requestBody
+      new_email:
+        type: string
+        required: false
+        in: requestBody
+      address:
+        type: string
+        required: false
+        in: requestBody
+      phone:
+        type: string
+        required: false
+        in: requestBody
+    output:
+      type: object
       contentType: application/json
 
 environment:
