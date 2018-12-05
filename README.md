@@ -1,21 +1,13 @@
 # MailChimp as a microservice
 
-## Installation and Build
-```
-
-npm install -g omg
-omg build
-
-```
-
-
 ## Usage
 
 ### Add subscriber to a list
 
-```
+```coffee
+# Storyscript
 
-omg exec add -a list_name=<list_name> -a user_email=<user_email> -a status="subscribed" -a first_name=<f_name> -a last_name=<L_name> -e API_KEY=<API_KEY> -e USERNAME= <username>
+mailchimp add_subscriber list_name: 'Your_list_name' user_email: 'xxxx@gmail.com' first_name: 'John' last_name: 'Doe' status: 'subscribed/unsubscribed' address: 'user_address' phone: '+1xxxx' API_KEY: 'Mailchimp API key' USERNAME: 'Mailchimp Username'
 
 ```
 
