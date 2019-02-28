@@ -19,7 +19,7 @@ omg exec delete -a list_name=<list_name> -a user_email=<user_email> -e API_KEY=<
 
 ```
 
-### Add Tags to a subcriber
+### Add Tags to a subscriber
 
 ```
 
@@ -27,7 +27,7 @@ omg exec add_tag -a list_name=<list_name> -a user_email=<user_email> -a tag= <ta
 
 ```
 
-### Update a subcriber
+### Update a subscriber
 
 ```
 
